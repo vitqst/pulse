@@ -31,6 +31,14 @@ def open_url(url: str, cache_dir: str = None, num_attempts: int = 10, verbose: b
     """Download the given URL and return a binary-mode file object to access the data."""
     assert is_url(url)
     assert num_attempts >= 1
+	
+    # Fake Data
+    cache_files=glob.glob(os.path.join('cache', 'shape_predictor_68_face_landmarks.dat'))
+    cache_files2=glob.glob(os.path.join('cache', 'synthesis.pt'))
+    if(return_path):
+        return cache_files[0]
+    else:
+        return open(cache_files2[0], "rb")
 
     # Lookup from cache.
     url_md5 = hashlib.md5(url.encode("utf-8")).hexdigest()

@@ -31,7 +31,9 @@ output_dir = Path(args.output_dir)
 output_dir.mkdir(parents=True,exist_ok=True)
 
 print("Downloading Shape Predictor")
-f=open_url("https://drive.google.com/uc?id=1huhv8PYpNNKbGCLOaYUjOgR1pY5pmbJx", cache_dir=cache_dir, return_path=True)
+f=open_url("https://drive.google.com/uc?id=1hZDxpPP63Ioqw_XfibsJZ4Qg0zbl8Ah1", cache_dir=cache_dir, return_path=True)
+#f=glob.glob(os.path.join('cache', 'shape_predictor_68_face_landmarks.dat'))[0]
+
 predictor = dlib.shape_predictor(f)
 
 for im in Path(args.input_dir).glob("*.*"):

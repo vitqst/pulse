@@ -40,9 +40,30 @@ Note that if your data begins at a low resolution already, downscaling it furthe
 
 The dataset we evaluated on was [CelebA-HQ](https://github.com/tkarras/progressive_growing_of_gans), but in our experience PULSE works with any picture of a realistic face.
 
+
 ### Applying PULSE
 Once your data is appropriately formatted, all you need to do is
 ```
 python run.py
 ```
 Enjoy!
+
+### VitQST note
+
+#### Active pulse
+```
+conda env create -f pulse.yml
+conda activate pulse
+```
+
+#### Install missing package & files
+```
+## Download 2 files from here then place it in `cache` folder
+https://drive.google.com/drive/folders/15TVqz2blvycQt_VUYKjncPY4Z-pb5QmT?usp=sharing
+
+## Install package missing
+conda install -c conda-forge libcxx
+conda install -c conda-forge libgfortran
+
+```
+
